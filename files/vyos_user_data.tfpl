@@ -1,0 +1,18 @@
+#cloud-config
+vyos_config_commands:
+    - set system host-name 'VyOS-MWC2025'
+    - set system login banner pre-login 'Welcome to the VyOS for Mobile World Conference 2025'
+    - set interfaces ethernet eth0 description 'WAN-AWS'
+    - set interfaces ethernet eth1 description 'LAN-AWS'
+    - set interfaces ethernet eth1 dhcp-options no-default-route
+    - set nat source rule 100 description 'NAT to INTERNET'
+    - set nat source rule 100 outbound-interface 'eth0'
+    - set nat source rule 100 source address '10.0.11.0/24'
+    - set nat source rule 100 translation address 'masquerade'
+    - set nat destination rule 110 description 'Port Forwarding To WebServer'
+    - set nat destination rule 110 destination port '8080'
+    - set nat destination rule 110 inbound-interface 'eth0'
+    - set nat destination rule 110 protocol 'tcp'
+    - set nat destination rule 110 translation address '10.0.11.21'
+
+
