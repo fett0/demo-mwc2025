@@ -44,14 +44,10 @@ This module enables the deployment of an **Ubuntu-based virtual machine (VM) run
 
   
 
-## High level diagram on Azure
+## High level diagram on AWS
 
 ![Diagram](img/diagram_mwc_2025.png)
 
-
-### Prerequisites  
-
-## Getting Started
 
 ## Requirements
 
@@ -77,4 +73,5 @@ $ terraform apply
 ```
 ## Outputs
 ```bash
-$ VyOS_Public_IP_Address = "x.x.x.x"
+$ vyos_public_ip = "x.x.x.x"
+$ vyos_key_name = "xxxxx"
